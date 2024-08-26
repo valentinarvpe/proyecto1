@@ -1,24 +1,25 @@
 package org.example.config
-//import groovy.sql.Sql
+import groovy.sql.Sql
 
 @Singleton
 class Conexionbd {
-    /*
-    private Sql sqlConnection
 
-    // Método para obtener la conexión SQL
+    private static Sql instanciaSQl
+
+    static {
+        def url = 'jdbc:mysql://localhost:3306/bdpruebas'
+        def user = 'root'
+        def password = 'Ami1'
+        def driver = 'com.mysql.cj.jdbc.Driver'
+        instanciaSQl = Sql.newInstance(url, user, password, driver)    }
+
     Sql getConnection() {
-        // Constructor privado para establecer la conexión
-        String url = "jdbc:mysql://localhost:3306/tu_base_de_datos"
-        String user = "tu_usuario"
-        String password = "tu_contraseña"
-        sqlConnection = Sql.newInstance(url, user, password, "com.mysql.jdbc.Driver")
-        return sqlConnection
+        return instanciaSQl
     }
 
-    // Método para cerrar la conexión
     void closeConnection() {
-        sqlConnection.close()
+        if (instanciaSQl != null) {
+            instanciaSQl.close()
+        }
     }
-     */
 }

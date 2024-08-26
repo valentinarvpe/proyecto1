@@ -11,10 +11,10 @@ repositories {
 
 dependencies {
     implementation 'org.apache.groovy:groovy:4.0.14'
-    implementation 'mysql:mysql-connector-java:8.0.28'
+    implementation 'org.apache.groovy:groovy-sql:4.0.21'
+    implementation 'mysql:mysql-connector-java:8.0.33'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-
 }
 
 test {
